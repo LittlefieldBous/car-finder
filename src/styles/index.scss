@@ -1,0 +1,180 @@
+body {
+  background-image: url('../car-finder-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+} 
+
+h1, h2, h3, h4, h5, h6, p, label, select {
+  font-family:'opensans', sans-serif;
+  font-weight: 400;
+  color: #348FBC;
+}
+
+h1,p {
+  color: #fff;
+  line-height: 1.5;
+  margin: 0
+}
+
+h1 {
+  font-size: 2.3rem
+}
+
+p {
+  font-size: 20px;
+  letter-spacing: .6px;
+}
+
+.carResults-container {
+  min-height: 100vh;       
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction:column;   
+  margin: 2rem;
+}
+
+.title-container {
+  text-align: left;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 0 0 15px;
+}
+
+.carForm{
+  background-color: rgba(242, 242, 242, 1);
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  border-right: 2px solid #ccc;
+  flex: 1;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+label {
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+.select-form {
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+    padding: 16px 40px 16px 16px;
+    /* adjust border to none */
+    border: none;
+    border-radius: 8px;
+    /* make background transparent to show the fieldset outline */
+    background-color: transparent;
+    color: #212121;
+    cursor: pointer;
+    font-family: 'opensans', sans-serif;
+    font-weight: 400;
+    z-index:1;
+
+    appearance: none;   
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    // Pure CSS triangle using gradient
+    background-image: linear-gradient (45deg, transparent 50%, #348FBC 50%), 
+                      linear-gradient(-45deg, #348FBC 50%, transparent 50%); 
+    background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .outline {
+      border-color: #2a7099;
+      border-width: 3px;
+    }
+} 
+
+.input-wrapper {
+  position:relative;
+  width:100%;
+  max-width:250px;
+}
+
+fieldset.outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 8px;
+  border: 2px solid #348FBC;
+  border-radius: 8px;
+  pointer-events: none;
+}
+  
+.legend-text {
+  padding: 0.5px;
+  font-size: 12px;
+  color: #348FBC;
+  font-weight:600;
+  margin-left: 8px;
+}
+
+.form-group.is-disabled, .is-disabled label, .is-disabled .select-form, .is-disabled .legend-text, 
+.is-disabled .fieldset.outline {
+  opacity: 0.45;
+  pointer-events: none;
+  color: #909090;
+}
+
+.is-disabled .input-wrapper fieldset.outline {
+  border: 2px solid #909090;
+}
+
+.form-group.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* mobile styles */
+@media (max-width: 768px) {
+  .carForm {
+    flex-direction: column;
+    align-items: center;
+    max-width:100%;
+  }
+
+  .form-group {
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+
+
