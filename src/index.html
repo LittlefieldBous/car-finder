@@ -3,66 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New ES6/SCSS Project</title>
-</head>
-<body>
+  <title>Car Finder Project</title>
   <script src="bundle.js"></script>
+</head>
 
+<body>
   <section id="carResults" class="carResults-container">
 
     <div class="title-container">
-    <h1>Find your Dream Vehicle</h1>
-    <p>Have you been dreaming about getting a new vehicle?<br>
+      <h1>Find your Dream Vehicle</h1>
+        <p>Have you been dreaming about getting a new vehicle?<br>
     Well, you're in luck.</p>
     </div>
 
   <form id="carSearchForm" class="carForm">
 
     <div class ="form-group is-active">
-    <label for="select-year">Year</label>
-<div class="input-wrapper">
-    <select id="select-year" class="select-form">
-        <option value="">Vehicle Year</option>
-    </select>
+      <label for="select-year">Year</label>
+        <div class="input-wrapper">
+          <select id="select-year" class="select-form">
+            <!-- Year options will be populated here -->
+          <option value="">Vehicle Year</option>
+          </select>
     <!-- fieldset creates the border outline -->
-    <fieldset class="outline">
-      <legend class="legend-text">Year</legend>
-   
-    </fieldset>
+      <fieldset class="outline">
+        <legend class="legend-text">Year</legend>
+      </fieldset>
     </div> <!--end of input wrapper -->
-    
     </div> <!--end of form group -->
     
 
     <div class ="form-group is-disabled">
-    <label for="select-make">Make</label>
-    <div class="input-wrapper">
-    <select id="select-make" class="select-form">
-      <option value="">Vehicle Make</option>
-      <!-- Year options will be populated here -->
-    </select>
-    <!-- fieldset creates the border outline -->
-    <fieldset class="outline">
-      <legend class="legend-text">Make</legend>
-    </fieldset>
+      <label for="select-make">Make</label>
+      <div class="input-wrapper">
+        <select id="select-make" class="select-form">
+            <option value="">Vehicle Make</option>
+            <!-- Make options will be populated here -->
+        </select>
+      <!-- fieldset creates the border outline -->
+        <fieldset class="outline">
+          <legend class="legend-text">Make</legend>
+        </fieldset>
     </div> <!--end of input wrapper -->
     </div>
 
     <div class ="form-group is-disabled">
     <label for="select-model">Model</label>
-    <div class="input-wrapper">
-    <select id="select-model" class="select-form">
-      <option value="">Vehicle Model</option>
-      <!-- Year options will be populated here -->
-    </select>
-    <fieldset class="outline">
-      <legend class="legend-text">Model</legend>
-    </fieldset>
+      <div class="input-wrapper">
+        <select id="select-model" class="select-form">
+          <option value="">Vehicle Model</option>
+
+      <!-- Model options will be populated here -->
+        </select>
+        <fieldset class="outline">
+          <legend class="legend-text">Model</legend>
+        </fieldset>
     </div> <!--end of input wrapper -->
     </div>
     
-  <!--button type="submit" class="submit-button">Search</!--button-->
-
   </form>
 
 </section>

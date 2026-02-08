@@ -5,8 +5,8 @@ import carData from './car-dataset.json';
 import './styles/index.scss';
 
 // class car represents a blueprint for creating car objects with all the properties from the dataset
-// I use 'this' to attach properties to each individual car instance.It makes them properties of the object. For example each 
-// car object will have its own model, year, price, etc. that can be accessed using 'this.model', 'this.year', etc. within the class methods.
+// I use 'this' to attach properties to each individual car instance. 
+// For example each car object will have its own model, year, price, etc. that can be accessed using 'this.model', 'this.year', etc. within the class methods.
 class Car {
     constructor (model, year, price, transmission, mileage, fuelType, tax, mpg, engineSize, manufacturer) {
         this.model = model;
@@ -29,7 +29,7 @@ class Car {
 // convert json to car objects. After creating the blueprint, I created a class 'CarSearch' This class has a constructor that takes data as a parameter. Inside the constructor, I map over the data and create instances of the Car class for each entry in the dataset. As a result, I have a way to interact with the car data within the application. The CarSearch class also contains methods to handle the dropdown population and event listeners for user interactions. 
 class CarSearch {
     constructor(data) {
-        // I create a property called 'this.cars' and use the map() method to loop through the data. The map method transform this into an array. The arrow functions means for each car in the data, (*note car is just a parameter name that could be called anything) I create a new instance of the Car class ('new Car') using the properties from the dataset. This way, I have an array of Car objects that I can work with in my application.
+        // I create a property called 'this.cars' and use the map() method to loop through the data. The map method transform this into a sort of an array or rather a collection of data. The arrow functions means for each car in the data, (*note car is just a parameter name that could be called anything) I create a new instance of the Car class ('new Car') using the properties from the dataset. This way, I have an array of Car objects that I can work with in my application.
         this.cars = data.map(car => new Car (
             car.model,
             car.year, 
@@ -43,7 +43,8 @@ class CarSearch {
             car.Manufacturer
         ));
 
-        // Next I get the DOM elements for the select dropdowns using document.getElementById and store them as properties using 'this.yearSelect' etc. I need these as I will be populating the dropdowns with <option></option> tags (and attaching event listeners etc)
+        // Next I get the DOM elements for the select dropdowns using document.getElementById and store them as properties using 'this.yearSelect' etc. 
+        // I need these as I will be populating the dropdowns with <option></option> tags (and attaching event listeners etc)
         // Get DOM elements
         this.yearSelect = document.getElementById('select-year');
         this.makeSelect = document.getElementById('select-make');
@@ -72,7 +73,7 @@ class CarSearch {
             const years = [...new Set(this.cars.map(car => car.year))].sort((a, b) => b-a);
            // 6. years.forEach(year => { ... }) - Loops through the array of unique years and creates an <option> element for each year, setting its value and text content to the year, and appending it to the yearSelect dropdown in the DOM.
             years.forEach(year => {
-                const option = document.createElement('option'); //createsa new <option> element
+                const option = document.createElement('option'); // creates a new <option> element
                 option.value = year; // sets the value =  <option value="2020">)
                 option.textContent = year; // sets the text content = <option value="2020">2020</option>
                 this.yearSelect.appendChild(option); // appends the option to the yearSelect dropdown
@@ -178,7 +179,7 @@ class CarSearch {
   
     const car = this.cars.find(car => 
         car.year === parseInt(year) && 
-        car.manufacturer.toLowerCase() === make.toLowerCase() && //toLowerCase makes comparisons case-insensitve.
+        car.manufacturer.toLowerCase() === make.toLowerCase() && // toLowerCase makes comparisons case-insensitve.
         car.model === model
     );  
     //check if we found a car that matches 
@@ -236,7 +237,7 @@ attachEventListeners() {
 
 // This code initializes the entire application. like a car's ignition switch.
 
-let carSearch; // declare this outside of a functoin to make it a global variable that can be accessed in the browser console for testing and debugging purposes.
+let carSearch; // declare this outside of a function to make it a global variable that can be accessed in the browser console for testing and debugging purposes.
 
 // let DOM load before initializing the app / and running javaScript code. 
 // This ensures that all the HTML elements are fully loaded and available in the DOM before the JavaScript code tries to access them. 
